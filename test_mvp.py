@@ -264,8 +264,8 @@ def test_api_serves_single_page_ui(test_client):
     assert res.status_code == 200
     assert "text/html" in res.headers["content-type"]
     assert "Shopify + Google ADK 2.0" in res.text
-    assert "W1: PGlite + worker.py" in res.text
-    assert "Firebase Data Connect" in res.text
+    assert "React" in res.text
+    assert "root" in res.text
 
 
 def test_api_orders_filtering(test_client):

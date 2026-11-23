@@ -135,6 +135,7 @@ This project is configured for one-click deployment as a Web Service on [Render]
      ```bash
      pip install -r requirements.txt
      ```
+     *(Note: The production React bundle is already pre-built in `static/` so Render builds quickly without requiring extra Node buildpacks. If rebuilding the React frontend locally, run `cd frontend && npm install && npm run build`)*
    - **Start Command**:
      ```bash
      uvicorn app:app --host 0.0.0.0 --port $PORT

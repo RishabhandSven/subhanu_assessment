@@ -47,9 +47,12 @@ app = FastAPI(
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 INDEX_HTML = os.path.join(STATIC_DIR, "index.html")
+ASSETS_DIR = os.path.join(STATIC_DIR, "assets")
 
 os.makedirs(STATIC_DIR, exist_ok=True)
+os.makedirs(ASSETS_DIR, exist_ok=True)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+app.mount("/assets", StaticFiles(directory=ASSETS_DIR), name="assets")
 
 
 @app.get("/", response_class=FileResponse)
